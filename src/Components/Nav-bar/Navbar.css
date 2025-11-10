@@ -1,0 +1,132 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 170px;
+}
+.navbar img{
+    width: 140px;
+    margin-left: -80px;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 20px;
+}
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+}
+.nav-menu li img{
+    width: 50px;
+    margin: auto;
+    display: flex;
+}
+.nav-connect{
+    padding: 20px 40px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #da7c25 0.3%, #b923e1 102.06%);
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-right: -60px;
+}
+.nav-connect:hover{
+    transform: scale(1.05);
+}
+.anchor-link{
+    text-decoration: none;
+    color: white;
+}
+.nav-mob-close,
+.nav-mob-open{
+    display: none;
+}
+
+/* Mobile Styles */
+@media(max-width:768px){
+    .navbar{
+        margin: 20px 50px;
+    }
+    .navbar img:first-child{
+        width: 120px;
+        margin-left: 0;
+    }
+    .nav-connect{
+        display: none;
+    }
+    .nav-mob-open{
+        display: block;
+        position: fixed;
+        right: 30px;
+        width: 30px; /* Reduced from potentially larger size */
+        z-index: 1;
+        cursor: pointer;
+    }
+    .nav-mob-close{
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px; /* Reduced from potentially larger size */
+        cursor: pointer;
+    }
+    .nav-menu{
+        position: fixed;
+        flex-direction: column;
+        align-items: start;
+        top: 0;
+        gap: 30px;
+        background-color: #1f0016;
+        width: 350px;
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s;
+        right: -350px;
+        padding-top: 80px;
+    }
+    .nav-menu li{
+        font-size: 24px;
+        padding-left: 50px;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
+    }
+    .nav-menu li .anchor-link{
+        font-size: 24px;
+    }
+    
+    /* Add this to ensure menu icons don't get affected by other image styles */
+    .nav-mob-open,
+    .nav-mob-close {
+        width: 30px !important; /* Force the size */
+    }
+}
+
+/* Small Mobile Styles */
+@media(max-width:480px){
+    .navbar{
+        margin: 20px 30px;
+    }
+    .nav-menu{
+        width: 280px;
+        right: -280px;
+    }
+    .nav-menu li{
+        padding-left: 30px;
+        font-size: 20px;
+    }
+    .nav-mob-open{
+        right: 20px;
+        width: 25px !important; /* Increased from 15px for better usability */
+    }
+    .nav-mob-close{
+        right: 20px;
+        width: 25px !important; /* Consistent size with menu open */
+    }
+}

@@ -1,0 +1,213 @@
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin: 70px 160px;
+    padding: 40px 0;
+}
+.services-title {
+    text-align: center;
+    width: 100%;
+}
+.services-title h1{
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.services-title-underline {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+.services-format{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px 40px;
+    border-radius: 15px;
+    border: 2px solid #2a2a2a;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    height: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.services-format::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+.services-format:hover::before {
+    left: 100%;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+    width: 100%;
+}
+.services-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.services-format h3{
+    font-size: 22px;
+    font-weight: 600;
+    color: #888;
+    margin: 0;
+}
+.services-format h2{
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    line-height: 1.2;
+}
+.services-format p{
+    color: #d4d4d4;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+.services-readmore{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    width: fit-content;
+}
+.services-readmore p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    color: #df8908;
+    transition: color 0.3s ease;
+}
+.services-readmore img{
+    width: 20px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(58%) sepia(90%) saturate(1234%) hue-rotate(360deg);
+}
+.services-readmore:hover {
+    transform: translateX(8px);
+}
+.services-readmore:hover p {
+    color: #b415ff;
+}
+.services-readmore:hover img {
+    transform: translateX(5px);
+}
+.services-format:hover{
+    border: 2px solid #df8908;
+    background: linear-gradient(145deg, #2a1a1a, #3d2d2d);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(223, 137, 8, 0.2);
+}
+
+/* Small Tablet Styles */
+@media (max-width: 768px) {
+    .services{
+        margin: 50px 40px;
+        gap: 50px;
+    }
+    .services-title h1{
+        font-size: 48px;
+    }
+    .services-title-underline {
+        width: 150px;
+    }
+    .services-container{
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 500px;
+        margin: 0 auto 60px;
+    }
+    .services-format{
+        padding: 35px 30px;
+        text-align: center;
+    }
+    .services-format h2{
+        font-size: 26px;
+    }
+    .services-format p{
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .services-readmore{
+        align-self: center;
+    }
+}
+
+/* Mobile Styles (480px and below) */
+@media (max-width: 480px) {
+    .services{
+        margin: 40px 25px;
+        gap: 40px;
+        padding: 30px 10px;
+    }
+    .services-title h1{
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+    .services-title-underline {
+        width: 120px;
+        height: 3px;
+    }
+    .services-container{
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+    .services-format{
+        padding: 30px 25px;
+        gap: 18px;
+        border-radius: 12px;
+    }
+    .services-format h3{
+        font-size: 18px;
+    }
+    .services-format h2{
+        font-size: 20px;
+    }
+    .services-format p{
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    .services-readmore{
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .services-readmore p{
+        font-size: 16px;
+    }
+    .services-readmore img{
+        width: 18px;
+    }
+    .services-format:hover{
+        transform: translateY(-5px) scale(1.01);
+    }
+}
